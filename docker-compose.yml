@@ -1,0 +1,69 @@
+version: '3.8'
+
+services:
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    restart: always
+    ports:
+      - "8080:80"
+    networks:
+      - kpt-net
+
+  backend:
+    build: ./backend
+    container_name: backend
+    restart: always
+    ports:
+      - "8081:80"
+    networks:
+      - kpt-net
+
+  api:
+    build: ./api
+    container_name: api
+    restart: always
+    # Port ภายใน 80 / Port ภายนอก: ไม่เปิด
+    networks:
+      - kpt-net
+    depends_on:
+      - mysql
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql
+    restart: always
+    command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
+    # Port ภายใน 3306 / Port ภายนอก: ไม่เปิด
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: kpt_architecture
+      MYSQL_USER: kpt_user
+      MYSQL_PASSWORD: kpt_password
+    volumes:
+      - ./mysql/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - mysql_data:/var/lib/mysql
+    networks:
+      - kpt-net
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    ports:
+      - "8082:80"
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: rootpassword
+    depends_on:
+      - mysql
+    networks:
+      - kpt-net
+
+networks:
+  kpt-net:
+    driver: bridge
+
+volumes:
+  mysql_data:

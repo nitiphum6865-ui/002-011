@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แผนกวิชาสถาปัตยกรรม | วิทยาลัยเทคนิคกาญจนาภิเษก (KPT Architecture)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fa-solid fa-compass-drafting logo-icon"></i>
+                <div class="logo-text">
+                    <span class="brand-title">KPT ARCHITECTURE</span>
+                    <span class="brand-sub">แผนกวิชาสถาปัตยกรรม</span>
+                </div>
+            </div>
+
+            <nav class="nav-links">
+                <a href="#hero">หน้าแรก</a>
+                <a href="#about">เกี่ยวกับแผนก</a>
+                <a href="#courses">หลักสูตร</a>
+                <a href="#teachers">คณาจารย์</a>
+                <a href="#portfolio">ผลงานนักศึกษา</a>
+                <a href="#contact" class="btn-contact">ติดต่อแผนก</a>
+                <div id="authNavContainer" class="auth-nav-container">
+                    <button class="btn-auth btn-login" onclick="openModal('loginModal')"><i class="fa-solid fa-right-to-bracket"></i> เข้าสู่ระบบ</button>
+                    <button class="btn-auth btn-register" onclick="openModal('registerModal')"><i class="fa-solid fa-user-plus"></i> สมัครสมาชิก</button>
+                </div>
+            </nav>
+
+            <button class="mobile-toggle" id="mobileToggle">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <div class="badge-pill">
+                <i class="fa-solid fa-cube"></i> KPT ARCHITECTURE DEPARTMENT
+            </div>
+            <h1 class="hero-title">สร้างสรรค์พื้นที่ด้วยจินตนาการ<br><span class="highlight">ก่อร่างสร้างอนาคตด้วยสถาปัตยกรรม</span></h1>
+            <p class="hero-subtitle">มุ่งเน้นการจัดการเรียนการสอนเพื่อพัฒนาบุคลากรด้านการออกแบบสถาปัตยกรรม การเขียนแบบนวัตกรรมอาคาร (BIM) และเทคโนโลยีก่อสร้างยุคใหม่</p>
+            <div class="hero-btns">
+                <a href="#courses" class="btn btn-primary"><i class="fa-solid fa-graduation-cap"></i> ดูหลักสูตรการเรียน</a>
+                <a href="#portfolio" class="btn btn-secondary"><i class="fa-solid fa-cubes-stacked"></i> ชมผลงานนักศึกษา</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick Stats Grid -->
+    <section class="stats-bar">
+        <div class="container stats-container">
+            <div class="stat-card">
+                <i class="fa-solid fa-drafting-compass"></i>
+                <div class="stat-number">2</div>
+                <div class="stat-label">หลักสูตรการศึกษา (ปวช./ปวส.)</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-chalkboard-user"></i>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">ผู้เชี่ยวชาญวิชาชีพสถาปัตย์</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-award"></i>
+                <div class="stat-number">1st</div>
+                <div class="stat-label">รางวัลแข่งขันทักษะระดับภาค</div>
+            </div>
+            <div class="stat-card">
+                <i class="fa-solid fa-laptop-code"></i>
+                <div class="stat-number">100%</div>
+                <div class="stat-label">ห้องปฏิบัติการ CAD & BIM Studio</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">ABOUT OUR DEPARTMENT</span>
+                <h2>เกี่ยวกับแผนกวิชาสถาปัตยกรรม</h2>
+                <p>วิทยาลัยเทคนิคกาญจนาภิเษก (Kanchanaphisek Technical College)</p>
+            </div>
+
+            <div class="about-grid">
+                <div class="about-card shadow-hover">
+                    <div class="card-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>ประวัติความเป็นมา</h3>
+                    <p id="aboutHistory">แผนกวิชาสถาปัตยกรรม มุ่งเน้นการจัดการเรียนการสอนเพื่อพัฒนาบุคลากรด้านการออกแบบสถาปัตยกรรม การเขียนแบบนวัตกรรมอาคาร และเทคโนโลยีก่อสร้างยุคใหม่</p>
+                </div>
+
+                <div class="about-card shadow-hover">
+                    <div class="card-icon"><i class="fa-solid fa-eye"></i></div>
+                    <h3>วิสัยทัศน์ (Vision)</h3>
+                    <p id="aboutVision">เป็นผู้นำด้านการศึกษาและฝึกทักษะวิชาชีพสถาปัตยกรรมนวัตกรรม ตอบสนองความต้องการอุตสาหกรรมสร้างสรรค์และก่อสร้างอย่างยั่งยืน</p>
+                </div>
+
+                <div class="about-card shadow-hover">
+                    <div class="card-icon"><i class="fa-solid fa-bullseye"></i></div>
+                    <h3>พันธกิจ (Mission)</h3>
+                    <p id="aboutMission">จัดการเรียนการสอนเน้นการปฏิบัติจริงในห้องปฏิบัติการสตูดิโอออกแบบ และส่งเสริมทักษะคอมพิวเตอร์ช่วยออกแบบ (BIM, CAD, 3D Rendering)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="section courses-section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">CURRICULUM</span>
+                <h2>หลักสูตรที่เปิดสอน</h2>
+                <p>ระดับประกาศนียบัตรวิชาชีพ (ปวช.) และระดับประกาศนียบัตรวิชาชีพชั้นสูง (ปวส.)</p>
+            </div>
+
+            <div class="courses-grid" id="coursesGrid">
+                <!-- Dynamic Loaded Courses -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Faculty / Teachers Section -->
+    <section id="teachers" class="section teachers-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FACULTY MEMBERS</span>
+                <h2>คณาจารย์ประจำแผนก</h2>
+                <p>ทีมครูผู้เชี่ยวชาญด้านการออกแบบสถาปัตยกรรมและเทคโนโลยีก่อสร้าง</p>
+            </div>
+
+            <div class="teachers-grid" id="teachersGrid">
+                <!-- Dynamic Loaded Teachers -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Portfolios Showcase -->
+    <section id="portfolio" class="section portfolio-section bg-alt">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">STUDENT WORK SHOWCASE</span>
+                <h2>ผลงานและโครงการออกแบบของนักศึกษา</h2>
+                <p>การฝึกทักษะออกแบบและสร้างสรรค์ผลงานระดับมืออาชีพ</p>
+            </div>
+
+            <div class="portfolio-grid" id="portfolioGrid">
+                <!-- Dynamic Loaded Portfolios -->
+            </div>
+        </div>
+    </section>
+
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="contact-wrapper shadow-lg">
+                <div class="contact-info">
+                    <h3>ติดต่อแผนกวิชาสถาปัตยกรรม</h3>
+                    <p>วิทยาลัยเทคนิคกาญจนาภิเษก</p>
+                    
+                    <div class="info-item">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <div>
+                            <strong>ที่อยู่:</strong>
+                            <p>แผนกวิชาสถาปัตยกรรม อาคารเรียนปฏิบัติการสถาปัตย์ วิทยาลัยเทคนิคกาญจนาภิเษก</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <strong>อีเมล:</strong>
+                            <p>architecture@kpt.ac.th</p>
+                        </div>
+                    </div>
+
+                    <div class="info-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <strong>โทรศัพท์:</strong>
+                            <p>034-XXX-XXX ต่อ แผนกสถาปัตยกรรม</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-box">
+                    <h3>ส่งข้อความสอบถาม</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">ชื่อ - นามสกุล</label>
+                            <input type="text" id="name" required placeholder="กรอกชื่อ-นามสกุล">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">อีเมล</label>
+                            <input type="email" id="email" required placeholder="example@domain.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">เรื่องที่ติดต่อ</label>
+                            <input type="text" id="subject" placeholder="เช่น การสมัครเรียน, ทัศนศึกษา">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">ข้อความ</label>
+                            <textarea id="message" rows="4" required placeholder="กรอกรายละเอียดข้อความ..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-block">
+                            <i class="fa-solid fa-paper-plane"></i> ส่งข้อความ
+                        </button>
+                    </form>
+                    <div id="formAlert" class="form-alert hidden"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div>
+                <p>&copy; 2026 Department of Architecture - Kanchanaphisek Technical College (KPT Architecture).</p>
+                <p class="sub-text">kpt-architecture project with Docker Containers Architecture (Frontend:8080, Backend:8081, phpMyAdmin:8082)</p>
+            </div>
+            <div class="footer-links">
+                <a href="http://localhost:8080">Frontend (8080)</a>
+                <a href="http://localhost:8081" target="_blank">Backend (8081)</a>
+                <a href="http://localhost:8082" target="_blank">phpMyAdmin (8082)</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('loginModal')">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-right-to-bracket modal-icon"></i>
+                <h3>เข้าสู่ระบบ</h3>
+                <p>เข้าสู่ระบบเพื่อใช้งานแผนกวิชาสถาปัตยกรรม KPT</p>
+            </div>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginUsername">ชื่อผู้ใช้ หรือ อีเมล</label>
+                    <input type="text" id="loginUsername" required placeholder="admin หรือ student1">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">รหัสผ่าน</label>
+                    <input type="password" id="loginPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-sign-in-alt"></i> เข้าสู่ระบบ</button>
+            </form>
+            <div id="loginAlert" class="form-alert hidden"></div>
+            <div class="modal-footer">
+                ยังไม่มีบัญชี? <a href="javascript:void(0)" onclick="closeModal('loginModal'); openModal('registerModal');">สมัครสมาชิกที่นี่</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Register Modal -->
+    <div id="registerModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('registerModal')">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-user-plus modal-icon"></i>
+                <h3>สมัครสมาชิก</h3>
+                <p>สร้างบัญชีใหม่สำหรับนักศึกษาและผู้สนใจ</p>
+            </div>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="regFullname">ชื่อ - นามสกุล</label>
+                    <input type="text" id="regFullname" required placeholder="นายสมชาย สถาปัตย์">
+                </div>
+                <div class="form-group">
+                    <label for="regUsername">ชื่อผู้ใช้ (Username)</label>
+                    <input type="text" id="regUsername" required placeholder="somchai_kpt">
+                </div>
+                <div class="form-group">
+                    <label for="regEmail">อีเมล</label>
+                    <input type="email" id="regEmail" required placeholder="somchai@kpt.ac.th">
+                </div>
+                <div class="form-group">
+                    <label for="regPhone">เบอร์โทรศัพท์</label>
+                    <input type="tel" id="regPhone" placeholder="081-234-5678">
+                </div>
+                <div class="form-group">
+                    <label for="regAvatarFile"><i class="fa-solid fa-image"></i> เลือกไฟล์รูปโปรไฟล์ (อัปโหลดรูปภาพ)</label>
+                    <input type="file" id="regAvatarFile" accept="image/*" class="file-input">
+                    <input type="hidden" id="regAvatar">
+                </div>
+                <div class="form-group">
+                    <label for="regPassword">รหัสผ่าน</label>
+                    <input type="password" id="regPassword" required placeholder="••••••••">
+                </div>
+                <button type="submit" class="btn btn-primary btn-block"><i class="fa-solid fa-user-check"></i> ยืนยันการสมัครสมาชิก</button>
+            </form>
+            <div id="registerAlert" class="form-alert hidden"></div>
+            <div class="modal-footer">
+                มีบัญชีอยู่แล้ว? <a href="javascript:void(0)" onclick="closeModal('registerModal'); openModal('loginModal');">เข้าสู่ระบบที่นี่</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Profile Modal -->
+    <div id="profileModal" class="modal-overlay hidden">
+        <div class="modal-card">
+            <button class="modal-close" onclick="closeModal('profileModal')">&times;</button>
+            <div class="modal-header">
+                <i class="fa-solid fa-id-card modal-icon"></i>
+                <h3>แก้ไขข้อมูลโปรไฟล์</h3>
+                <p>ปรับปรุงข้อมูลส่วนตัวและรหัสผ่านของคุณ</p>
+            </div>
+            <form id="profileForm">
+                <input type="hidden" id="profUserId">
+                <div class="profile-avatar-preview">
+                    <img id="profAvatarPreview" src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?w=400&auto=format&fit=crop&q=80" alt="Avatar">
+                </div>
+                <div class="form-group">
+                    <label for="profAvatarFile"><i class="fa-solid fa-cloud-arrow-up"></i> อัปโหลดไฟล์รูปภาพใหม่</label>
+                    <input type="file" id="profAvatarFile" accept="image/*" class="file-input">
+                </div>
+                <div class="form-group">
+                    <label for="profFullname">ชื่อ - นามสกุล</label>
+                    <input type="text" id="profFullname" required>
+                </div>
+                <div class="form-group">
+                    <label for="profEmail">อีเมล</label>
+                    <input type="email" id="profEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="profPhone">เบอร์โทรศัพท์</label>
+                    <input type="tel" id="profPhone">
+                </div>
+                <div class="form-group">
+                    <label for="profBio">ประวัติส่วนตัว / แนะนำตัว</label>
+                    <textarea id="profBio" rows="3" placeholder="ระบุเกี่ยวกับตนเอง ผลงาน หรือสาขาที่สนใจ..."></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="profAvatar">หรือระบุลิงก์รูปโปรไฟล์ (URL)</label>
+                    <input type="url" id="profAvatar" placeholder="https://example.com/my-photo.jpg">
+                </div>
+                <div class="form-group">
+                    <label for="profPassword">เปลี่ยนรหัสผ่านใหม่ (เว้นว่างไว้หากไม่ต้องการเปลี่ยน)</label>
+                    <input type="password" id="profPassword" placeholder="••••••••">
+                </div>
+                <div class="form-btn-group">
+                    <button type="button" class="btn btn-secondary" onclick="closeModal('profileModal')"><i class="fa-solid fa-arrow-left"></i> ย้อนกลับ</button>
+                    <button type="submit" class="btn btn-primary"><i class="fa-solid fa-save"></i> บันทึกการเปลี่ยนแปลง</button>
+                </div>
+            </form>
+            <div id="profileAlert" class="form-alert hidden"></div>
+    <!-- Portfolio Detail Modal -->
+    <div id="portfolioDetailModal" class="modal-overlay hidden">
+        <div class="modal-card" style="max-width:650px;">
+            <button class="modal-close" onclick="closeModal('portfolioDetailModal')">&times;</button>
+            <div class="modal-header" style="text-align:left; margin-bottom:15px;">
+                <span id="modalPortCat" class="portfolio-cat">ผลงานออกแบบ</span>
+                <h3 id="modalPortTitle" style="font-size:1.5rem; margin-top:5px;">รายละเอียดผลงาน</h3>
+                <p id="modalPortAuthor" style="color:var(--accent-blue);">ผู้สร้างสรรค์: -</p>
+            </div>
+            <img id="modalPortImg" src="" alt="Portfolio Image" class="portfolio-modal-img">
+            <p id="modalPortDesc" style="color:var(--text-muted); line-height:1.7; white-space:pre-line; margin-bottom:20px;"></p>
+            <div style="text-align:right;">
+                <button class="btn btn-secondary" onclick="closeModal('portfolioDetailModal')"><i class="fa-solid fa-xmark"></i> ปิดหน้าต่าง</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
